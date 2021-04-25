@@ -1,0 +1,129 @@
+:root{
+    --primary-color: #f3f3e9;
+    --secondary-color: #8080ff;
+    --nav-bg: #008080;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: var(--primary-color);
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 30% 60%;
+    grid-template-areas: 
+    'nav main'
+    'nav footer'
+    ;
+}
+
+#header{
+    grid-area: nav;
+    height: 100%;
+    background-color: var(--nav-bg);
+    top: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+#navbar{
+    
+}
+
+#navbar h1{
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    background-color:#176797;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#navbar a{
+    text-decoration: none;
+    color: #f3f3e9;
+    padding: 5px;
+}
+
+#navbar li:hover{
+    background-color:#575757;
+}
+
+main{
+    grid-area: main;
+    padding: 10px;
+    margin: 10px 10px 10px 0;
+}
+
+
+h2{
+    margin: 10px 0 10px 0;
+}
+
+article ul{
+    margin-left: 10px;
+    padding: 15px;
+}
+
+footer{
+    grid-area: footer;
+    text-align: center;
+    font-weight: 500;
+    color:#176797;
+   
+}
+
+footer p{
+    margin-bottom: 10px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #header{
+        width: 100%;
+        position: relative;
+    }
+    body{
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    'nav'
+    'main'
+    'footer'
+    ;
+   
+}
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    body{
+        grid-template-columns: 40% 60%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body{
+    grid-template-columns: 32% 68%;
+}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body{
+    grid-template-columns: 20% 80%;
+}
+}
